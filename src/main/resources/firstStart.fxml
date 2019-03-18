@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.company.controller.controll.ControlInpName?>
+<?import com.company.controller.controll.DigitalInpConroll?>
+<AnchorPane prefHeight="366.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.FirstStart">
+   <children>
+      <Label fx:id="label" layoutY="-2.0" prefHeight="148.0" prefWidth="600.0" style="-fx-background-color: #fbff9f;" text="     Данная программа запускается впервые на этом устройстве.Введите все данные для регистрации." wrapText="true" />
+      <Label layoutY="146.0" prefHeight="220.0" prefWidth="600.0" style="-fx-background-color: #5f7cee;" />
+      <ControlInpName fx:id="nameField" layoutX="39.0" layoutY="170.0" />
+      <ControlInpName fx:id="passField" layoutX="39.0" layoutY="223.0" />
+      <DigitalInpConroll fx:id="dateField" layoutX="39.0" layoutY="276.0" />
+      <DigitalInpConroll fx:id="daysField" layoutX="137.0" layoutY="325.0" prefHeight="27.0" prefWidth="69.0" />
+      <Label layoutX="266.0" layoutY="175.0" text="Имя" />
+      <Label layoutX="263.0" layoutY="228.0" text="Пароль" />
+      <Label layoutX="241.0" layoutY="281.0" text="Дата 01.01.2000" />
+      <Label layoutX="246.0" layoutY="330.0" text="Цикл дней" />
+      <Button layoutX="464.0" layoutY="290.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="ок" onAction="#setOk"/>
+      <Button layoutX="464.0" layoutY="325.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="сброс" onAction="#setReset"/>
+      <ImageView fitHeight="184.0" fitWidth="200.0" layoutX="365.0" layoutY="82.0" pickOnBounds="true">
+         <image>
+            <Image url="@12.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

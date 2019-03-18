@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.company.controller.controll.ControlInpName?>
+<AnchorPane prefHeight="304.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.Login">
+   <children>
+      <Label fx:id="label" alignment="CENTER" layoutY="-3.0" prefHeight="149.0" prefWidth="579.0" style="-fx-background-color: #fbff9f;" text="Введите Имя и пароль" wrapText="true">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font></Label>
+      <Label layoutY="146.0" prefHeight="187.0" prefWidth="579.0" style="-fx-background-color: #5f7cee;" />
+      <ControlInpName fx:id="loginField" layoutX="39.0" layoutY="170.0" />
+      <ControlInpName fx:id="passField" layoutX="39.0" layoutY="223.0" />
+      <Label layoutX="266.0" layoutY="175.0" text="Имя" />
+      <Label layoutX="263.0" layoutY="228.0" text="Пароль" />
+      <Button fx:id="button" layoutX="68.0" layoutY="292.0" mnemonicParsing="false" onAction="#setOk" prefHeight="30.0" prefWidth="79.0" text="ок" />
+      <ImageView fitHeight="165.0" fitWidth="184.0" layoutX="382.0" layoutY="89.0" pickOnBounds="true">
+         <image>
+            <Image url="@12.jpeg" />
+         </image>
+      </ImageView>
+      <Button layoutX="337.0" layoutY="294.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="215.0" text=":-(  ой, мама я все забыла" onAction="#setOy"/>
+   </children>
+</AnchorPane>
