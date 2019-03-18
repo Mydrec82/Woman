@@ -31,6 +31,7 @@ public class WorkWindow {
     }
 
 
+    //Created table
     private void fillTable(LocalDate date){
         int now = date.getDayOfMonth();
         LocalDate first = LocalDate.of(date.getYear(), date.getMonth(), 1);
@@ -87,7 +88,5 @@ public class WorkWindow {
         labelNow.setText(middle.getMonth().toString());
         fillTable(middle);
     }
-    public void one(){
 
-    }
 }
