@@ -8,15 +8,16 @@ import javafx.scene.layout.GridPane;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 
 public class WorkWindow {
 
     @FXML
     public GridPane pane;
-    public Label date;
     public Label labelNow;
     private SetingFile file = new SetingFile();
     private LocalDate dateNow = LocalDate.now();
@@ -26,14 +27,14 @@ public class WorkWindow {
 
     public void initialize() {
         String s = dateNow.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        date.setText(s);
+        labelNow.setText("Сегодня " + s);
         fillTable(dateNow);
     }
 
 
     //Created table
     private void fillTable(LocalDate date){
-        int now = date.getDayOfMonth();
+//        int now = date.getDayOfMonth();
         LocalDate first = LocalDate.of(date.getYear(), date.getMonth(), 1);
         LocalDate one = getMensDay1(date);
 
@@ -64,28 +65,30 @@ public class WorkWindow {
         }
     }
 
+    //return date mens for this(now) month
     private LocalDate getMensDay1(LocalDate now){
         LocalDate dateFist = LocalDate.parse(file.getData("date"), DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         int days = Integer.parseInt(file.getData("days"));
 
-        while(dateFist.getMonthValue() < now.getMonthValue()){
+        while(dateFist.isBefore(now)){
             dateFist = dateFist.plusDays(days);
         }
-        return dateFist;
+        return dateFist.minusDays(days);
     }
 
     public void addMonth(){
         middle = middle.plusMonths(1);
-        labelNow.setText(middle.getMonth().toString());
+        labelNow.setText(middle.getMonth().getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru")));
         fillTable(middle);
     }
 
     public void minusMonth(){
         middle = middle.minusMonths(1);
-        if(dateNow.getMonthValue() == middle.getMonthValue()){
-            labelNow.setText("Сегодня");
-        }
-        labelNow.setText(middle.getMonth().toString());
+//        if(middle.isEqual(dateNow)){
+//            labelNow.setText("Сегодня " + dateNow);
+//        }
+//        else labelNow.setText(middle.getMonth().getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru")));
+        labelNow.setText(middle.getMonth().getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru")));
         fillTable(middle);
     }
 
