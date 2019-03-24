@@ -10,8 +10,11 @@ public class StartWorkWindow extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/workWindow.fxml"));
-        primaryStage.setScene(new Scene(loader.load()));
+        Scene scene = new Scene(loader.load());
+        scene.setUserAgentStylesheet(getClass().getResource("/test.css").toExternalForm());
+        primaryStage.setScene(scene);
         primaryStage.setResizable(false);
+
         primaryStage.show();
     }
 

@@ -8,7 +8,6 @@ import javafx.scene.layout.GridPane;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
@@ -50,7 +49,7 @@ public class WorkWindow {
                 Label label = new Label(numberDay);
                 label.setMaxSize(200, 200);
                 label.setAlignment(Pos.CENTER);
-                label.setStyle("-fx-font-size:14px");
+//                label.setStyle("-fx-font-size:14px");
 
                 //set color label
                 if(first.isAfter(one.minusDays(7)) && first.isBefore(one))label.setStyle("-fx-background-color: lightgreen");
