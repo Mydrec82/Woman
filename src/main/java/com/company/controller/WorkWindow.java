@@ -66,11 +66,11 @@ public class WorkWindow {
     }
 
     //return date mens for this(now) month
-    private LocalDate getMensDay1(LocalDate now){
+    private LocalDate getMensDay1(LocalDate input){
         LocalDate dateFist = LocalDate.parse(file.getData("date"), DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         int days = Integer.parseInt(file.getData("days"));
 
-        while(dateFist.isBefore(now)){
+        while(dateFist.isBefore(input)){
             dateFist = dateFist.plusDays(days);
         }
         return dateFist.minusDays(days);
@@ -84,10 +84,6 @@ public class WorkWindow {
 
     public void minusMonth(){
         middle = middle.minusMonths(1);
-//        if(middle.isEqual(dateNow)){
-//            labelNow.setText("Сегодня " + dateNow);
-//        }
-//        else labelNow.setText(middle.getMonth().getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru")));
         labelNow.setText(middle.getMonth().getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("ru")));
         fillTable(middle);
     }
