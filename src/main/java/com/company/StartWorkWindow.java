@@ -13,6 +13,7 @@ public class StartWorkWindow extends Application {
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
+        primaryStage.setTitle("Woman days");
 
         primaryStage.show();
     }

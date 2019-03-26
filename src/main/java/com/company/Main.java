@@ -15,6 +15,7 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
+        primaryStage.setTitle("Woman days");
 
         if(new SetingFile().getFile().length() == 0){
             loader.setLocation(getClass().getResource("/firstStart.fxml"));
