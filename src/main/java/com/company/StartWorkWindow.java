@@ -11,7 +11,6 @@ public class StartWorkWindow extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/workWindow.fxml"));
         Scene scene = new Scene(loader.load());
-        scene.setUserAgentStylesheet(getClass().getResource("/test.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
 
